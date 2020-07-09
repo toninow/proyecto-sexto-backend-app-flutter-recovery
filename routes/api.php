@@ -22,3 +22,4 @@ Route::get('categories' , 'Api\CategoryController@index');
 Route::get('orders' , 'Api\OrderController@index');
 Route::get('products' , 'Api\ProductController@index');
 Route::get('sliders' , 'Api\SliderController@index');
+Route::get('get-all-hot-products' , 'Api\ProductController@getAllHotProducts');
