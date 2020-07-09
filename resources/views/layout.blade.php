@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
     <title> eCommerce Admin - Dashboard</title>
 
@@ -21,6 +22,8 @@
     <link href="{{ URL::to('css/sb-admin.css') }}" rel="stylesheet">
 
     <script src="{{ URL::to('ckeditor/ckeditor.js') }}"></script>
+	
+	
 
 </head>
 
