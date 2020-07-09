@@ -52,7 +52,7 @@ class SliderController extends Controller
                     if($photo->move(public_path(), $fileName)){
                         $slider = Slider::find($slider->id);
                         //$slider->image_url = url('/') . '/' . $fileName;
-						$slider->image_url = 'https://foodmeanderings.com/wp-content/uploads/2019/12/Chocolate-Icing-with-Cocoa.jpg';
+						$slider->image_url = 'https://www.anvilknitwear.com/img/products/790L/790L-032-Intro1_med.jpg';
                         $slider->save();
                     }
                 }
@@ -108,7 +108,7 @@ class SliderController extends Controller
                     if($photo->move(public_path(), $fileName)){
                         $slider = Slider::find($slider->id);
                         //$slider->image_url = url('/') . '/' . $fileName;
-						$slider->image_url = 'https://foodmeanderings.com/wp-content/uploads/2019/12/Chocolate-Icing-with-Cocoa.jpg';
+						$slider->image_url = 'https://www.anvilknitwear.com/img/products/790L/790L-032-Intro1_med.jpg';
                         $slider->save();
                     }
                 }
