@@ -51,7 +51,8 @@ class SliderController extends Controller
                 if($ext == 'jpg' || $ext == 'png'){
                     if($photo->move(public_path(), $fileName)){
                         $slider = Slider::find($slider->id);
-                        $slider->image_url = url('/') . '/' . $fileName;
+                        //$slider->image_url = url('/') . '/' . $fileName;
+						$slider->image_url = 'https://foodmeanderings.com/wp-content/uploads/2019/12/Chocolate-Icing-with-Cocoa.jpg';
                         $slider->save();
                     }
                 }
