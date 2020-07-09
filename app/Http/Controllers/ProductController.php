@@ -59,7 +59,8 @@ class ProductController extends Controller
                 if($ext == 'jpg' || $ext == 'png'){
                     if($photo->move(public_path(), $fileName)){
                         $product = Product::find($product->id);
-                        $product->photo = url('/') . '/' . $fileName;
+                        //$product->photo = url('/') . '/' . $fileName;
+						$product->photo = 'https://www.indianhealthyrecipes.com/wp-content/uploads/2015/10/pizza-recipe-1.jpg';
                         $product->save();
                     }
                 }

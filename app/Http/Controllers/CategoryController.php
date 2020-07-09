@@ -51,7 +51,9 @@ class CategoryController extends Controller
 				if($ext == 'jpg' || $ext == 'png'){
 					if($photo->move(public_path() , $fileName)){
 							$category = Category::find($category->id);
-							$category->icon = url('/') . '/' . $fileName;
+							//$category->icon = url('/') . '/' . $fileName;
+							
+							$category->icon = 'https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg';
 							$category->save();
 					}
 				}
