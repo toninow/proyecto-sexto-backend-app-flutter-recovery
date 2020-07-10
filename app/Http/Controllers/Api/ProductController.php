@@ -95,4 +95,11 @@ class ProductController extends Controller
 		$newArrivalProducts = Product::where('is_new_arrival' ,1)->get();
 		return ProductResource::collection($newArrivalProducts);
 	}
+	
+	public function getProductsByCategoryId($categoryId){
+		$productsByCategory = Product::where('category_id' ,$categoryId)->get();
+		return ProductResource::collection($productsByCategory);
+	}
+	
+	
 }
