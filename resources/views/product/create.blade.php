@@ -36,6 +36,11 @@
             <label for="exampleInputEmail1"> Product discount </label>
             <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="0.0" name="productDiscount">
         </div>
+		
+		  <div class="form-group">
+            <label for="exampleInputEmail1"> Product Details </label>
+            <textarea name="productDetail" id="editor1"></textarea>
+        </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1"> Select product category </label>
