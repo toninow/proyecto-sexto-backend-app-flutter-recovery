@@ -23,6 +23,7 @@ class CreateProductsTable extends Migration
 			$table->boolean('is_new_arrival');
 			$table->integer('category_id');
 			$table->integer('user_id');
+			$table->text('detail');
             $table->timestamps();
         });
     }
