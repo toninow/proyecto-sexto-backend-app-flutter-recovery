@@ -14,6 +14,7 @@ class MakeShippingsTable extends Migration
     public function up()
     {
         //
+		Schema::dropIfExists('shippings');
 		
 		Schema::create('shippings', function (Blueprint $table) {
             $table->bigIncrements('id');
