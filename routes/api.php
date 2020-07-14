@@ -28,3 +28,4 @@ Route::get('get-products-by-category/{categoryId}' , 'Api\ProductController@getP
 Route::post('register' , 'Api\UserController@register');
 Route::post('login' , 'Api\UserController@login');
 Route::post('shipping' , 'Api\ShippingController@store');
+Route::post('make-payment' , 'Api\PaymentController@makePayment');
