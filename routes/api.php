@@ -25,3 +25,4 @@ Route::get('sliders' , 'Api\SliderController@index');
 Route::get('get-all-hot-products' , 'Api\ProductController@getAllHotProducts');
 Route::get('get-all-new-arrival-products' , 'Api\ProductController@getAllNewArrivalProducts');
 Route::get('get-products-by-category/{categoryId}' , 'Api\ProductController@getProductsByCategoryId');
+Route::post('register' , 'Api\UserController@register');
