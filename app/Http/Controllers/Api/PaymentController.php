@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller
@@ -64,7 +66,7 @@ class PaymentController extends Controller
 			
 			
 			
-		} catch($exception){
+		} catch(\Exception $exception){
 			
 			return response(['result' => $exception]);
 		} 
