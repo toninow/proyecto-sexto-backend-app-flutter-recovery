@@ -14,6 +14,7 @@ class AddProductsList extends Migration
     public function up()
     {
         //
+		Schema::dropIfExists('products');
 		
 		Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
