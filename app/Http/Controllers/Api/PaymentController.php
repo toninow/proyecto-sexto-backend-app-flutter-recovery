@@ -38,7 +38,7 @@ class PaymentController extends Controller
     public function makePayment(Request $request)
     {
 		
-		return $cartItems = $request->input('userId');
+		return $cartItems = $request->input('cartItems');
 		/**
         \Stripe\Stripe::setApiKey('sk_test_mirrQ5hTnI8Ggpr6nsHiAY93');
 
