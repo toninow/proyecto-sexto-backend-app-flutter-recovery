@@ -53,7 +53,7 @@ class PaymentController extends Controller
         $charge = \Stripe\Charge::create([
             'amount' => 1000,
             'currency' => 'usd',
-            'payment_method_types' => $token,
+            'source' => $token,
             'receipt_email' => $request->input('email'),
         ]);
 
