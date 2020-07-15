@@ -38,7 +38,8 @@ class PaymentController extends Controller
     public function makePayment(Request $request)
     {
 		
-		//return $cartItems = $request->input('cartItems');
+		return $cartItems = $request->input('cartItems');
+		/**
         \Stripe\Stripe::setApiKey('sk_test_mirrQ5hTnI8Ggpr6nsHiAY93');
 
         $token = \Stripe\Token::create([
@@ -58,6 +59,8 @@ class PaymentController extends Controller
         ]);
 
         return $charge;
+		
+		**/
 		
 		/***
         try{
