@@ -127,7 +127,7 @@ class PaymentController extends Controller
 				return response(['result' => true]);
 			}
 			
-			return response(['result' => false]);
+			return response(['result' => $cartItems]);
             
             
         } catch (Exception $exception){
