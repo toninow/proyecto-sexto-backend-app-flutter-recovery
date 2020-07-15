@@ -93,7 +93,7 @@ class PaymentController extends Controller
             $cartItems = json_decode($data, true);
             $totalAmount = 0.0;
 			
-			if(is_array($cartItems)){
+			
 				foreach ($cartItems as $cartItem){
 					$order = new Order();
 					$order->order_date = Carbon::now()->toDateString();
@@ -125,9 +125,9 @@ class PaymentController extends Controller
 				]);
 
 				return response(['result' => true]);
-			}
 			
-			return response(['result' => $cartItems]);
+			
+			
             
             
         } catch (Exception $exception){
