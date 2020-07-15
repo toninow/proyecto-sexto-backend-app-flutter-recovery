@@ -38,7 +38,27 @@ class PaymentController extends Controller
     public function makePayment(Request $request)
     {
 		
-		return $cartItems = $request->input('cartItems');
+		//return $cartItems = $request->input('cartItems');
+		
+		
+		 $data = $request->input('cartItems');
+            $cartItems = json_decode($data, true);
+            $totalAmount = 0.0;
+            foreach ($cartItems as $cartItem){
+                $order = new Order();
+                $order->order_date = Carbon::now()->toDateString();
+                $order->product_id = $cartItem['productId'];
+                $order->user_id = $request->input('userId');
+                $order->quantity = $cartItem['productQuantity'];
+                $order->amount = ($cartItem['productPrice'] - $cartItem['productDiscount']);
+                $totalAmount+= $order->amount * $order->quantity;
+                //$order->save();
+				
+				return $totalAmount;
+            }
+			
+			return 0;
+		
 		/**
         \Stripe\Stripe::setApiKey('sk_test_mirrQ5hTnI8Ggpr6nsHiAY93');
 
