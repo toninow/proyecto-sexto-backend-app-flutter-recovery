@@ -41,14 +41,14 @@ class PaymentController extends Controller
 		//return $cartItems = $request->input('cartItems');
 		
 		
-		 $data = $request->input('cartItems');
+		    $data = $request->input('cartItems');
             $cartItems = json_decode($data, true);
 			
 			//return $cartItems;
 			
-			return response(['result' => $cartItems]);
-            //$totalAmount = 0.0;
-            //foreach ($cartItems as $cartItem){
+			//return response(['result' => $cartItems]);
+            $totalAmount = 0.0;
+            foreach ($cartItems as $cartItem){
                 //$order = new Order();
                 //$order->order_date = Carbon::now()->toDateString();
                 //$order->product_id = $cartItem['productId'];
@@ -58,8 +58,8 @@ class PaymentController extends Controller
                 //$totalAmount+= $order->amount * $order->quantity;
                 //$order->save();
 				
-			//	return $totalAmount;
-            //}
+				return $cartItem['productId'];
+            }
 			
 			//return 0;
 		
