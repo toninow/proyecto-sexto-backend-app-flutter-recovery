@@ -37,6 +37,29 @@ class PaymentController extends Controller
      */
     public function makePayment(Request $request)
     {
+		
+		//return $cartItems = $request->input('cartItems');
+        \Stripe\Stripe::setApiKey('sk_test_mirrQ5hTnI8Ggpr6nsHiAY93');
+
+        $token = \Stripe\Token::create([
+            'card' => [
+                'number' => $request->input('cardNumber'),
+                'exp_month' => $request->input('expiryMonth'),
+                'exp_year' => $request->input('expiryYear'),
+                'cvc' => $request->input('cvcNumber')
+            ]
+        ]);
+
+        $charge = \Stripe\Charge::create([
+            'amount' => 1000,
+            'currency' => 'usd',
+            'source' => $token,
+            'receipt_email' => $request->input('email'),
+        ]);
+
+        return $charge;
+		
+		/***
         try{
             $data = $request->input('cartItems');
             $cartItems = json_decode($data, true);
@@ -73,6 +96,8 @@ class PaymentController extends Controller
         } catch (Exception $exception){
             return response(['result' => $exception]);
         }
+		
+		**/
     }
 
     /**
