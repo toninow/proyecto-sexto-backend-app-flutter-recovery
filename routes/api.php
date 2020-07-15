@@ -29,4 +29,4 @@ Route::post('register' , 'Api\UserController@register');
 Route::post('login' , 'Api\UserController@login');
 Route::post('shipping' , 'Api\ShippingController@store');
 Route::post('make-payment' , 'Api\PaymentController@makePayment');
-Route::post('get-order-list-by-user-id/{userId}' , 'Api\OrderController@getOrdersByUserId');
+Route::get('get-order-list-by-user-id/{userId}' , 'Api\OrderController@getOrdersByUserId');
