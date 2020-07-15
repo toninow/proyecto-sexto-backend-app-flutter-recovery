@@ -44,7 +44,7 @@ class PaymentController extends Controller
 		 $data = $request->input('cartItems');
             $cartItems = json_decode($data, true);
 			
-			return $data;
+			return $cartItems;
             //$totalAmount = 0.0;
             //foreach ($cartItems as $cartItem){
                 //$order = new Order();
