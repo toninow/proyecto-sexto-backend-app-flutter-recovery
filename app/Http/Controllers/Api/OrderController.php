@@ -19,6 +19,12 @@ class OrderController extends Controller
         //
 		return OrderResource::collection(Order::all());
     }
+	
+	public function getOrdersByUserId($userId){
+		
+		return Order::where('user_id' , $userId)->get();
+		
+	}
 
     /**
      * Show the form for creating a new resource.
