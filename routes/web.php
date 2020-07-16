@@ -38,6 +38,5 @@ Route::get('edit-slider/{id}', 'SliderController@edit');
 Route::get('delete-slider/{id}', 'SliderController@destroy');
 Route::get('all-orders', 'OrderController@index');
 
-
-
+Auth::routes();
 
