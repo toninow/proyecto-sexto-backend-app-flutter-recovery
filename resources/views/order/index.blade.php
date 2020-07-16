@@ -58,7 +58,7 @@
 							<td> <img src="{{$order->product->photo}}" width="100" height="100"> </td>
 							<td> {{ $order->quantity }} </td>
 							<td> {{ $order->amount }} </td>
-							<td> {{ $order->user->name }} </td>
+							<td>username </td>
 							
                             <td>
                                 <a href="{{ URL::to('approve') }}/{{ $order->id }}" class="btn btn-outline-primary btn-sm"> Approve </a>
