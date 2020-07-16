@@ -15,6 +15,13 @@ class OrderController extends Controller
     public function index()
     {
         //
+		$orders = Order::all();
+		foreach($orders as $order){
+			$order->product;
+			$order->user;
+		}
+		
+		return view('order.index' , compact('orders'));
     }
 
     /**
