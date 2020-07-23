@@ -141,7 +141,7 @@ class PaymentController extends Controller
             
             
         } catch (Exception $exception){
-            return response(['result' => $exception]);
+            return response(['result' => $exception->getMessage()]);
         }
 		
 		

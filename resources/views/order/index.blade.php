@@ -32,6 +32,7 @@
 						<th> Product Name </th>
                         <th> Product Photo </th>
 						<th> Quantity </th>
+						<th> Amount </th>
 						<th> Payment Type </th>
 						<th> User </th>
 						<th> Actions </th>
