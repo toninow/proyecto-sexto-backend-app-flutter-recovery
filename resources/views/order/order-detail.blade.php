@@ -52,7 +52,9 @@
                             <td> {{ $orderDetail->order_product_name }} </td>
 							<td> {{ $orderDetail->product_order_price }} </td>
 							<td> {{ $orderDetail->product_order_discount }} </td>
-							<td> {{ $orderDetail->product_photo }} </td>
+							<td>  
+								<img src ="{{ $orderDetail->product_photo }}" height="100" />
+							</td>
 							
 							
                             <td>
