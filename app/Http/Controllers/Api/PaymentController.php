@@ -91,6 +91,9 @@ class PaymentController extends Controller
         try{
             $data = $request->input('cartItems');
             $cartItems = json_decode($data, true);
+			$orderData = $request->input('order');
+			$selectedPaymentOption = json_decode($orderData,true);
+			
             $totalAmount = 0.0;
 			
 			
@@ -99,6 +102,7 @@ class PaymentController extends Controller
 					$order->order_date = Carbon::now()->toDateString();
 					$order->product_id = $cartItem['productId'];
 					$order->user_id = $request->input('userId');
+					$order->payment_type = $selectedPaymentOption['paymentType'];
 					$order->quantity = $cartItem['productQuantity'];
 					$order->amount = ($cartItem['productPrice'] - $cartItem['productDiscount']);
 					$totalAmount+= $order->amount * $order->quantity;
@@ -106,23 +110,29 @@ class PaymentController extends Controller
 				}
 				
 				
-				\Stripe\Stripe::setApiKey('sk_test_mirrQ5hTnI8Ggpr6nsHiAY93');
+				if($selectedPaymentOption['paymentType'] == 'Card'){
+					
+					\Stripe\Stripe::setApiKey('sk_test_mirrQ5hTnI8Ggpr6nsHiAY93');
 
-				$token = \Stripe\Token::create([
-					'card' => [
-						'number' => $request->input('cardNumber'),
-						'exp_month' => $request->input('expiryMonth'),
-						'exp_year' => $request->input('expiryYear'),
-						'cvc' => $request->input('cvcNumber')
-					]
-				]);
+					$token = \Stripe\Token::create([
+						'card' => [
+							'number' => $request->input('cardNumber'),
+							'exp_month' => $request->input('expiryMonth'),
+							'exp_year' => $request->input('expiryYear'),
+							'cvc' => $request->input('cvcNumber')
+						]
+					]);
 
-				$charge = \Stripe\Charge::create([
-					'amount' => $totalAmount * 100,
-					'currency' => 'usd',
-					'source' => $token,
-					'receipt_email' => $request->input('email'),
-				]);
+					$charge = \Stripe\Charge::create([
+						'amount' => $totalAmount * 100,
+						'currency' => 'usd',
+						'source' => $token,
+						'receipt_email' => $request->input('email'),
+					]);
+					
+				}
+				
+				
 
 				return response(['result' => true]);
 			

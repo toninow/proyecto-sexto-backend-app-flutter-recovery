@@ -32,7 +32,7 @@
 						<th> Product Name </th>
                         <th> Product Photo </th>
 						<th> Quantity </th>
-						<th> Amount </th>
+						<th> Payment Type </th>
 						<th> User </th>
 						<th> Actions </th>
                     </tr>
@@ -44,6 +44,7 @@
                         <th> Product Photo </th>
 						<th> Quantity </th>
 						<th> Amount </th>
+						<th> Payment Type </th>
 						<th> User </th>
 						<th> Actions </th>
                     </tr>
@@ -58,6 +59,7 @@
 							<td> <img src="{{$order->product->photo}}" width="100" height="100"> </td>
 							<td> {{ $order->quantity }} </td>
 							<td> {{ $order->amount }} </td>
+							<td> {{ $order->payment_type }} </td>
 							<td> {{ $order->user->name}} </td>
 							
                             <td>
