@@ -40,6 +40,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('edit-slider/{id}', 'SliderController@edit');
 	Route::get('delete-slider/{id}', 'SliderController@destroy');
 	Route::get('all-orders', 'OrderController@index');	
+	Route::get('order-detail/{orderId}', 'OrderController@show');	
 });
 
 Auth::routes();

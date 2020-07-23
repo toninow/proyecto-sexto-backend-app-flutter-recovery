@@ -51,9 +51,11 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order)
+    public function show($orderId)
     {
         //
+		$orderDetails = OrderDetail::where('order_id' , $orderId)->get();
+		return view('order.order-detail' , compact('orderDetails'));
     }
 
     /**

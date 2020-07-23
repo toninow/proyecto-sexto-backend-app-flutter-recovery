@@ -22,46 +22,44 @@
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-table"></i>
-            All Orders </div>
+            Order Detail </div>
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th> Order ID </th>
-						<th> Order Date </th>
-						<th> Payment Type </th>
-						<th> Total Amount </th>
-						<th> User </th>
+                        <th> Product Name </th>
+						<th> Product Price </th>
+						<th> Discount </th>
+						<th> Product Photo</th>
 						<th> Actions </th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
-                         <th> Order ID </th>
-						<th> Order Date </th>
-						<th> Payment Type </th>
-						<th> Total Amount </th>
-						<th> User </th>
+                       <th> Product Name </th>
+						<th> Product Price </th>
+						<th> Discount </th>
+						<th> Product Photo </th>
 						<th> Actions </th>
                     </tr>
                     </tfoot>
                     <tbody>
 
-                    @foreach($orders as $order)
+                    @foreach($orderDetails as $orderDetail)
 
                         <tr>
-                            <td> {{ $order->order_id }} </td>
-							<td> {{ $order->order_date }} </td>
-							<td> {{ $order->payment_type }} </td>
-							<td> {{ $order->total_amount }} </td>
-							<td> {{ $order->user->name}} </td>
+                            <td> {{ $orderDetail->order_product_name }} </td>
+							<td> {{ $orderDetail->product_order_price }} </td>
+							<td> {{ $orderDetail->product_order_discount }} </td>
+							<td> {{ $orderDetail->product_photo }} </td>
+							
 							
                             <td>
-								<a href="{{ URL::to('order-detail') }}/{{ $order->id }}" class="btn btn-outline-primary btn-sm"> Order Detail </a>
-                                <a href="{{ URL::to('approve') }}/{{ $order->id }}" class="btn btn-outline-primary btn-sm"> Approve </a>
+								
+                                <a href="{{ URL::to('approve') }}/{{ $orderDetail->id }}" class="btn btn-outline-primary btn-sm"> Approve </a>
                                 |
-                                <a href="{{ URL::to('cancel') }}/{{ $order->id }}" class="btn btn-outline-danger btn-sm"> Cancel </a>
+                                <a href="{{ URL::to('cancel') }}/{{ $orderDetail->id }}" class="btn btn-outline-danger btn-sm"> Cancel </a>
                             </td>
 
                         </tr>
