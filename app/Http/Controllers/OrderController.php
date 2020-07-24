@@ -34,6 +34,14 @@ class OrderController extends Controller
     {
         //
     }
+	
+	public function orderDetail($orderDetailId)
+    {
+        //
+		$orderDetail = OrderDetail::find($orderDetailId);
+		$orderDetail->status = 'approved';
+		$orderDetail->save();
+    }
 
     /**
      * Store a newly created resource in storage.

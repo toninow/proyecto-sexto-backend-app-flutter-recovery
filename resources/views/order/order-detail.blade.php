@@ -59,7 +59,7 @@
 							
                             <td>
 								
-                                <a href="{{ URL::to('approve') }}/{{ $orderDetail->id }}" class="btn btn-outline-primary btn-sm"> Approve </a>
+                                <a href="{{ URL::to('approve-order-detail') }}/{{ $orderDetail->id }}" class="btn btn-outline-primary btn-sm"> Approve </a>
                                 |
                                 <a href="{{ URL::to('cancel') }}/{{ $orderDetail->id }}" class="btn btn-outline-danger btn-sm"> Cancel </a>
                             </td>
