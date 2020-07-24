@@ -68,7 +68,7 @@ class OrderController extends Controller
 		$order->status = 'approve';
 		if($order->save()){
 				
-				OrderDetail::where('order_id',$orderId)->update(['status']=>'approved');
+				OrderDetail::where('order_id',$orderId)->update(['status' =>'approved']);
 				return redirect()->back()->with('success' , 'Order approved successfully!');
 			
 		}
