@@ -59,7 +59,7 @@ class ProductController extends Controller
 			Cloudder::upload($request->file('productPhoto'));
 			$cloundary_upload = Cloudder::getResult();
 							
-			$product->image_url = $cloundary_upload['url'];
+			$product->photo = $cloundary_upload['url'];
 			$product->save();
 			/**
             $photo = $request->file('productPhoto');
