@@ -1,9 +1,9 @@
 @extends('layout')
 @section('dashboard-content')
 
-    @if(Session::get('deleted'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" id="gone">
-            <strong> {{ Session::get('deleted') }} </strong>
+    @if(Session::get('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="gone">
+            <strong> {{ Session::get('success') }} </strong>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -33,6 +33,7 @@
 						<th> Payment Type </th>
 						<th> Total Amount </th>
 						<th> User </th>
+						<th> Status </th>
 						<th> Actions </th>
                     </tr>
                     </thead>
@@ -43,6 +44,7 @@
 						<th> Payment Type </th>
 						<th> Total Amount </th>
 						<th> User </th>
+						<th> Status </th>
 						<th> Actions </th>
                     </tr>
                     </tfoot>
@@ -56,10 +58,10 @@
 							<td> {{ $order->payment_type }} </td>
 							<td> {{ $order->total_amount }} </td>
 							<td> {{ $order->user->name}} </td>
-							
+							<th> {{ $order->status}} </th>
                             <td>
 								<a href="{{ URL::to('order-detail') }}/{{ $order->id }}" class="btn btn-outline-primary btn-sm"> Order Detail </a>
-                                <a href="{{ URL::to('approve') }}/{{ $order->id }}" class="btn btn-outline-primary btn-sm"> Approve </a>
+                                <a href="{{ URL::to('approve-order') }}/{{ $order->id }}" class="btn btn-outline-primary btn-sm"> Approve </a>
                                 |
                                 <a href="{{ URL::to('cancel') }}/{{ $order->id }}" class="btn btn-outline-danger btn-sm"> Cancel </a>
                             </td>

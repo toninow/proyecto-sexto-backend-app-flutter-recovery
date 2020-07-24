@@ -41,12 +41,38 @@ class OrderController extends Controller
 		$orderDetail = OrderDetail::find($orderDetailId);
 		$orderDetail->status = 'approved';
 		
+		$orderDetailList = OrderDetail::where('order_id' , $orderDetail->order_id)->get();
+		
+		$orderDetailListCounter = count($orderDetailList);
+		
 		if($orderDetail->save()){
+			
+			$approvedOrderDetailList = OrderDetail::where('order_id' , $orderDetail->order_id)->where('status','approved')->get();
+		
+			$approvedOrderDetailListCounter = count($approvedOrderDetailList);
+			
+			if($orderDetailListCounter == $approvedOrderDetailListCounter){
+				$order = Order::find($orderDetail->order_id);
+				$order->status = 'approved';
+				$order->save();
+			}
+			
 			return redirect()->back()->with('success' , 'Approved successfully');
 			
 		}
 		//$orderDetail->save();
     }
+	
+	public function approveOrder($orderId){
+		$order = Order::find($orderId);
+		$order->status = 'approve';
+		if($order->save()){
+				
+				OrderDetail::where('order_id',$orderId)->update(['status']=>'approved');
+				return redirect()->back()->with('success' , 'Order approved successfully!');
+			
+		}
+	}
 
     /**
      * Store a newly created resource in storage.

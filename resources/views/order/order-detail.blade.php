@@ -32,6 +32,7 @@
 						<th> Product Price </th>
 						<th> Discount </th>
 						<th> Product Photo</th>
+						<th> Status</th>
 						<th> Actions </th>
                     </tr>
                     </thead>
@@ -41,6 +42,7 @@
 						<th> Product Price </th>
 						<th> Discount </th>
 						<th> Product Photo </th>
+						<th> Status</th>
 						<th> Actions </th>
                     </tr>
                     </tfoot>
@@ -55,7 +57,7 @@
 							<td>  
 								<img src ="{{ $orderDetail->product_photo }}" height="100" />
 							</td>
-							
+							<td> {{ $orderDetail->status }} </td>
 							
                             <td>
 								

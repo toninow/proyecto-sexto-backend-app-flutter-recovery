@@ -113,6 +113,7 @@ class PaymentController extends Controller
 					$order->user_id = $request->input('userId');
 					$order->payment_type = $selectedPaymentOption['paymentType'];
 					$order->total_amount = $totalAmount;
+					$order->status = 'pending';
 					$order->order_id = Carbon::now()->year . Carbon::now()->month . Carbon::now()->day . $request->input('userId');
 					
 					if($order->save()){
@@ -126,6 +127,7 @@ class PaymentController extends Controller
 							$orderDetail->product_order_price = $cartItem['productPrice'];
 							$orderDetail->product_photo = $cartItem['productPhoto'];
 							$orderDetail->product_order_discount = $cartItem['productDiscount'];
+							$orderDetail->status = 'pending';
 							$orderDetail->save();
 						}
 					}

@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('all-orders', 'OrderController@index');	
 	Route::get('order-detail/{orderId}', 'OrderController@show');	
 	Route::get('approve-order-detail/{orderDetailId}', 'OrderController@orderDetail');
+	Route::get('approve-order/{orderId}', 'OrderController@approveOrder');
 });
 
 Auth::routes();
