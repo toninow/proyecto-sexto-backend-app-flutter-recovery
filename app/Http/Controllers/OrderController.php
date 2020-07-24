@@ -40,7 +40,12 @@ class OrderController extends Controller
         //
 		$orderDetail = OrderDetail::find($orderDetailId);
 		$orderDetail->status = 'approved';
-		$orderDetail->save();
+		
+		if($orderDetail->save()){
+			return redirect()->back()->with('success' , 'Approved successfully');
+			
+		}
+		//$orderDetail->save();
     }
 
     /**
