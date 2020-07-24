@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class ProductController extends Controller
 {
@@ -53,6 +54,14 @@ class ProductController extends Controller
         $product->category_id = $request->input('category');
         $product->user_id = 0;
         if($product->save()){
+			
+			
+			Cloudder::upload($request->file('productPhoto'));
+			$cloundary_upload = Cloudder::getResult();
+							
+			$product->image_url = $cloundary_upload['url'];
+			$product->save();
+			/**
             $photo = $request->file('productPhoto');
             if($photo != null){
                 $ext = $photo->getClientOriginalExtension();
@@ -67,6 +76,7 @@ class ProductController extends Controller
                 }
 
             }
+			**/
             return redirect()->back()->with('success', 'Product information inserted successfully!');
         }
         return redirect()->back()->with('failed', 'Product information could not be inserted!');

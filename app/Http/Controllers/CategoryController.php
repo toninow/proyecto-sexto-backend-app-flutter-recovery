@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class CategoryController extends Controller
 {
@@ -44,21 +45,37 @@ class CategoryController extends Controller
 		$category->icon = "";
 		$category->user_id = 0;
 		if($category->save()){
+			
+			
+							Cloudder::upload($request->file('categoryIcon'));
+							$cloundary_upload = Cloudder::getResult();
+							
+							$category->icon = $cloundary_upload['url'];
+							$category->save();
+			/**
 			$photo = $request->file('categoryIcon');
 			if($photo != null){
 				$ext = $photo->getClientOriginalExtension();
 				$fileName = rand(10000,50000) . '.' . $ext;
 				if($ext == 'jpg' || $ext == 'png'){
 					if($photo->move(public_path() , $fileName)){
+						
+							
+						
 							$category = Category::find($category->id);
-							//$category->icon = url('/') . '/' . $fileName;
+							
 							
 							$category->icon = 'https://media-cdn.tripadvisor.com/media/photo-s/0e/cc/0a/dc/restaurant-chocolat.jpg';
 							$category->save();
+							
 					}
 				}
 				
+				
 			}
+			**/
+			
+			
 			return redirect()->back()->with('success', 'Saved successfully!');
 		}
 		return redirect()->back()->with('failed', 'Could not save!');

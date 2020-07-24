@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class SliderController extends Controller
 {
@@ -44,6 +45,15 @@ class SliderController extends Controller
         $slider->message = $request->input('sliderMessage');
         $slider->image_url = "";
         if($slider->save()){
+			
+			
+			Cloudder::upload($request->file('sliderImage'));
+			$cloundary_upload = Cloudder::getResult();
+							
+			$slider->image_url = $cloundary_upload['url'];
+			$slider->save();
+			
+			/**
             $photo = $request->file('sliderImage');
             if($photo != null){
                 $ext = $photo->getClientOriginalExtension();
@@ -57,6 +67,7 @@ class SliderController extends Controller
                     }
                 }
             }
+			**/
             return redirect()->back()->with('success', 'Slider information inserted successfully!');
         }
         return redirect()->back()->with('failed', 'Slider information could not insert!');
