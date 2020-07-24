@@ -54,7 +54,14 @@
                             <td> {{ $product->name }} </td>
                             <td> {{ $product->price }} </td>
                             <td> {{ $product->discount }} </td>
-                            <td> {{ $product->category->name }} </td>
+							@if ($product->category->name)
+								<td> {{ $product->category->name }} </td>
+				
+							@else
+								<td> Deleted </td>
+							@endif
+							
+                            
                             <td> <img src="{{ $product->photo }}" width="100" height="100"></td>
                             <td>
                                 <a href="{{ URL::to('edit-product') }}/{{ $product->id }}" class="btn btn-outline-primary btn-sm"> Edit </a>
