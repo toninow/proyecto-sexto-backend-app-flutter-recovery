@@ -54,12 +54,13 @@
                             <td> {{ $product->name }} </td>
                             <td> {{ $product->price }} </td>
                             <td> {{ $product->discount }} </td>
-							@if ($product->category->name)
-								<td> {{ $product->category->name }} </td>
-				
-							@else
+							
+							@if(empty($product->category->name))
 								<td> Deleted </td>
+							@else
+								<td> {{ $product->category->name }} </td>
 							@endif
+							
 							
                             
                             <td> <img src="{{ $product->photo }}" width="100" height="100"></td>
