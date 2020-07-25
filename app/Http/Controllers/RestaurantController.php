@@ -133,8 +133,15 @@ class RestaurantController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Restaurant $restaurant)
+    public function destroy($restaurantId)
     {
         //
+		
+		if(Restaurant::destroy($restaurantId)){
+			
+			return redirect()->back()->with('deleted', 'Deleted successfully');
+		}
+		
+		return redirect()->back()->with('delete-failed' , 'Could not delete');
     }
 }
