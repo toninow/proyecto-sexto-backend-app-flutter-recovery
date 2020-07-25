@@ -30,3 +30,5 @@ Route::post('login' , 'Api\UserController@login');
 Route::post('shipping' , 'Api\ShippingController@store');
 Route::post('make-payment' , 'Api\PaymentController@makePayment');
 Route::get('get-order-list-by-user-id/{userId}' , 'Api\OrderController@getOrdersByUserId');
+
+Route::get('restaurants' , 'Api\RestaurantController@index');
