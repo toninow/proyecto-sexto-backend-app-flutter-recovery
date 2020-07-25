@@ -85,7 +85,7 @@ class RestaurantController extends Controller
     public function edit($restaurantId)
     {
         //
-		$restaurant = Category::find($restaurantId);
+		$restaurant = Restaurant::find($restaurantId);
 		return view('restaurant.edit' , compact('restaurant'));
     }
 
