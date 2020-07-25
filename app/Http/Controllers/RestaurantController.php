@@ -82,9 +82,11 @@ class RestaurantController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function edit(Restaurant $restaurant)
+    public function edit($restaurantId)
     {
         //
+		$restaurant = Category::find($restaurantId);
+		return view('restaurant.edit' , compact('restaurant'));
     }
 
     /**
@@ -94,9 +96,31 @@ class RestaurantController extends Controller
      * @param  \App\Models\Restaurant  $restaurant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Restaurant $restaurant)
+    public function update(Request $request, $id)
     {
         //
+		
+		$restaurant = Restaurant::find($id);
+		
+		$restaurant->name = $request->input('restaurantName');
+		$restaurant->telephone = $request->input('restaurantTelephone');
+		$restaurant->address = $request->input('restaurantAddress');
+        
+        
+        
+        if($restaurant->save()){
+            
+			
+			Cloudder::upload($request->file('restaurantImage'));
+			$cloundary_upload = Cloudder::getResult();
+							
+			$restaurant->image = $cloundary_upload['url'];
+			$restaurant->save();
+			
+            
+            return redirect()->back()->with('success', 'Restaurant Updated successfully!');
+        }
+        return redirect()->back()->with('failed', 'Could not update!');
     }
 
     /**

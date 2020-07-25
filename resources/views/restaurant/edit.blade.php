@@ -1,6 +1,6 @@
 @extends('layout')
 @section('dashboard-content')
-    <h1> Update category form</h1>
+    <h1> Create category form</h1>
 
     @if(Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert" id="gone">
@@ -20,25 +20,37 @@
         </div>
     @endif
 
-    <form action="{{ URL::to('update-category') }}/{{ $category->id }}" method="post" enctype="multipart/form-data">
+    <form action="{{ URL::to('update-restaurant') }}/{{ $restaurant->id }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="exampleInputEmail1"> Category name</label>
-            <input type="text" class="form-control" value="{{ $category->name }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category name" name="categoryName">
+            <label for="exampleInputEmail1"> Restaurant name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant name" name="restaurantName">
         </div>
-
-        <div class="form-group">
-            <label for="exampleInputEmail1"> Category Icon </label>
-            <input type="file" class="form-control" name="categoryIcon" onchange="loadPhoto(event)">
+		
+		<div class="form-group">
+            <label for="exampleInputEmail1"> Restaurant telephone</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant telephone" name="restaurantTelephone">
         </div>
-
-        <div>
-            <img id="photo" height="100" width="100">
+		
+		<div class="form-group">
+            <label for="exampleInputEmail1"> Restaurant address</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant address" name="restaurantAddress">
         </div>
+		
+		
+		<div class="form-group">
+            <label for="exampleInputEmail1"> Restaurant image</label>
+            <input type="file" class="form-control"  name="restaurantImage" onchange="loadPhoto(event)">
+        </div>
+		
+		<div>
+			<img id="photo" height="100" width="100">
+		</div>
 
-        <button type="submit" class="btn btn-primary"> Update </button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-    <script>
+	
+	 <script>
         function loadPhoto(event) {
             var reader = new FileReader();
             reader.onload = function () {
@@ -48,4 +60,5 @@
             reader.readAsDataURL(event.target.files[0]);
         }
     </script>
+
 @stop
