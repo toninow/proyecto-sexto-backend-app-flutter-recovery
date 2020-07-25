@@ -65,7 +65,7 @@ class OrderController extends Controller
 	
 	public function approveOrder($orderId){
 		$order = Order::find($orderId);
-		$order->status = 'approve';
+		$order->status = 'approved';
 		if($order->save()){
 				
 				OrderDetail::where('order_id',$orderId)->update(['status' =>'approved']);
