@@ -49,10 +49,10 @@
                     @foreach($restaurants as $restaurant)
 
                         <tr>
-                            <td> {{ $category->name }} </td>
-							<td> <img src="{{$category->image}}" width="100" height="100"> </td>
-							<th>{{ $category->telephone }} </th>
-							<th>{{ $category->address }} </th>
+                            <td> {{ $restaurant->name }} </td>
+							<td> <img src="{{$restaurant->image}}" width="100" height="100"> </td>
+							<th>{{ $restaurant->telephone }} </th>
+							<th>{{ $restaurant->address }} </th>
                             <td>
                                 <a href="{{ URL::to('edit-restaurant') }}/{{ $restaurant->id }}" class="btn btn-outline-primary btn-sm"> Edit </a>
                                 |
