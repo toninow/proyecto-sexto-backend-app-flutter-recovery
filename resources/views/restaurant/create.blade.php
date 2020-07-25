@@ -20,16 +20,27 @@
         </div>
     @endif
 
-    <form action="{{ URL::to('post-category-form') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ URL::to('post-restaurant-form') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-            <label for="exampleInputEmail1"> Category name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category name" name="categoryName">
+            <label for="exampleInputEmail1"> Restaurant name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant name" name="restaurantName">
         </div>
 		
 		<div class="form-group">
-            <label for="exampleInputEmail1"> Category Icon</label>
-            <input type="file" class="form-control"  name="categoryIcon" onchange="loadPhoto(event)">
+            <label for="exampleInputEmail1"> Restaurant telephone</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant telephone" name="restaurantTelephone">
+        </div>
+		
+		<div class="form-group">
+            <label for="exampleInputEmail1"> Restaurant address</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant address" name="restaurantAddress">
+        </div>
+		
+		
+		<div class="form-group">
+            <label for="exampleInputEmail1"> Restaurant image</label>
+            <input type="file" class="form-control"  name="restaurantImage" onchange="loadPhoto(event)">
         </div>
 		
 		<div>

@@ -43,6 +43,10 @@ Route::middleware(['auth'])->group(function () {
 	Route::get('order-detail/{orderId}', 'OrderController@show');	
 	Route::get('approve-order-detail/{orderDetailId}', 'OrderController@orderDetail');
 	Route::get('approve-order/{orderId}', 'OrderController@approveOrder');
+	
+	Route::get('create-restaurant', 'RestaurantController@create');
+	Route::post('post-restaurant-form', 'RestaurantController@store');
+	Route::get('all-restaurants', 'RestaurantController@index');
 });
 
 Auth::routes();

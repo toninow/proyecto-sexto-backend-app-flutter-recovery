@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Restaurant;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class RestaurantController extends Controller
 {
@@ -25,6 +26,7 @@ class RestaurantController extends Controller
     public function create()
     {
         //
+		return view('restaurant/create');
     }
 
     /**
@@ -36,6 +38,29 @@ class RestaurantController extends Controller
     public function store(Request $request)
     {
         //
+		
+		$restaurant = new Restaurant();
+		$restaurant->name = $request->input('restaurantName');
+		$restaurant->image = "";
+		$restaurant->telephone = $request->input('restaurantTelephone');
+		$restaurant->address = $request->input('restaurantAddress');
+		
+		
+		if($restaurant->save()){
+			
+			
+							Cloudder::upload($request->file('restaurantImage'));
+							$cloundary_upload = Cloudder::getResult();
+							
+							$restaurant->image = $cloundary_upload['url'];
+							$restaurant->save();
+	
+			
+			
+			return redirect()->back()->with('success', 'Restaurant Saved successfully!');
+		}
+		return redirect()->back()->with('failed', 'Could not save!');
+		
     }
 
     /**
