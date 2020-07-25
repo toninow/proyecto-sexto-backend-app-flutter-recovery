@@ -24,17 +24,17 @@
         @csrf
         <div class="form-group">
             <label for="exampleInputEmail1"> Restaurant name</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant name" name="restaurantName">
+            <input type="text" class="form-control" value="{{ $category->name }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant name" name="restaurantName">
         </div>
 		
 		<div class="form-group">
             <label for="exampleInputEmail1"> Restaurant telephone</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant telephone" name="restaurantTelephone">
+            <input type="text" class="form-control" value="{{ $category->telephone }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant telephone" name="restaurantTelephone">
         </div>
 		
 		<div class="form-group">
             <label for="exampleInputEmail1"> Restaurant address</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant address" name="restaurantAddress">
+            <input type="text" class="form-control" value="{{ $category->address }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter restaurant address" name="restaurantAddress">
         </div>
 		
 		
