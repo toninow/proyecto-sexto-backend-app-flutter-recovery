@@ -109,13 +109,17 @@ class RestaurantController extends Controller
         
         
         if($restaurant->save()){
-            
+            $photo = $request->file('restaurantImage');
+            if($photo != null){
+				Cloudder::upload($request->file('restaurantImage'));
+				$cloundary_upload = Cloudder::getResult();
+								
+				$restaurant->image = $cloundary_upload['url'];
+				$restaurant->save();
+				
+			}
 			
-			Cloudder::upload($request->file('restaurantImage'));
-			$cloundary_upload = Cloudder::getResult();
-							
-			$restaurant->image = $cloundary_upload['url'];
-			$restaurant->save();
+			
 			
             
             return redirect()->back()->with('success', 'Restaurant Updated successfully!');
