@@ -56,13 +56,11 @@ class ProductController extends Controller
 		$category_id_info = $request->input('category');
 		$restaurant = Category::find($category_id_info);
 		
-		echo $restaurant->id;
-		
 		$product->restaurant_id = $restaurant->id;
 		
         $product->user_id = 0;
 		
-		/**
+		
         if($product->save()){
 			
 			
@@ -76,7 +74,7 @@ class ProductController extends Controller
         }
         return redirect()->back()->with('failed', 'Product information could not be inserted!');
 		
-		**/
+		
     }
 
     /**
