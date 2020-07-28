@@ -120,8 +120,22 @@ class ProductController extends Controller
         $product->is_hot_product = $request->input('isHotProduct') ? true : false;
         $product->is_new_arrival = $request->input('isNewArrival') ? true : false;
         $product->category_id = $request->input('category');
+		
+		$category_id_info = $request->input('category');
+		$restaurant = Category::find($category_id_info);
+		
+		$product->restaurant_id = $restaurant->id;
+		
         $product->user_id = 0;
         if($product->save()){
+			
+			Cloudder::upload($request->file('productPhoto'));
+			$cloundary_upload = Cloudder::getResult();
+							
+			$product->photo = $cloundary_upload['url'];
+			$product->save();
+			
+			/**
             $photo = $request->file('productPhoto');
             if($photo != null){
                 $ext = $photo->getClientOriginalExtension();
@@ -135,6 +149,7 @@ class ProductController extends Controller
                 }
 
             }
+			**/
             return redirect()->back()->with('success', 'Product information updated successfully!');
         }
         return redirect()->back()->with('failed', 'Product information could not update!');
