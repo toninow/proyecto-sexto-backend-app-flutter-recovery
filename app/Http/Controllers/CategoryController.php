@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 use JD\Cloudder\Facades\Cloudder;
 
@@ -28,7 +29,9 @@ class CategoryController extends Controller
     public function create()
     {
         //
-		return view('category/create');
+		$restaurants = Restaurant::all();
+		
+		return view('category/create' , compact('restaurants'));
     }
 
     /**

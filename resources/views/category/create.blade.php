@@ -28,6 +28,16 @@
         </div>
 		
 		<div class="form-group">
+            <label for="exampleInputEmail1"> Select Restaurant </label>
+            <select class="form-control" name="restaurant">
+                <option> Select </option>
+                @foreach($restaurants as $restaurant)
+                    <option value="{{ $restaurant->id }}"> {{ $restaurant->name }}</option>
+                @endforeach
+            </select>
+        </div>
+		
+		<div class="form-group">
             <label for="exampleInputEmail1"> Category Icon</label>
             <input type="file" class="form-control"  name="categoryIcon" onchange="loadPhoto(event)">
         </div>
