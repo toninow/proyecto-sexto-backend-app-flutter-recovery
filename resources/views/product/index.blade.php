@@ -31,6 +31,7 @@
                         <th> Product Name </th>
                         <th> Product Price </th>
                         <th> Product Discount </th>
+						<th> Restaurant Name</th>
                         <th> Product Category </th>
                         <th> Product Photo </th>
                         <th>Actions </th>
@@ -41,6 +42,7 @@
                         <th> Product Name </th>
                         <th> Product Price </th>
                         <th> Product Discount </th>
+						<th> Restaurant Name</th>
                         <th> Product Category </th>
                         <th> Product Photo </th>
                         <th>Actions </th>
@@ -54,6 +56,12 @@
                             <td> {{ $product->name }} </td>
                             <td> {{ $product->price }} </td>
                             <td> {{ $product->discount }} </td>
+							
+							@if(empty($product->restaurant->name))
+								<td> Deleted </td>
+							@else
+								<td> {{ $product->restaurant->name }} </td>
+							@endif
 							
 							@if(empty($product->category->name))
 								<td> Deleted </td>
