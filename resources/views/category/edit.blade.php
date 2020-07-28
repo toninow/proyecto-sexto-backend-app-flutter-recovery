@@ -26,6 +26,16 @@
             <label for="exampleInputEmail1"> Category name</label>
             <input type="text" class="form-control" value="{{ $category->name }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter category name" name="categoryName">
         </div>
+		
+		<div class="form-group">
+            <label for="exampleInputEmail1"> Select Restaurant </label>
+            <select class="form-control" name="restaurant">
+                <option> Select </option>
+                @foreach($restaurants as $restaurant)
+                    <option value="{{ $restaurant->id }}" @if($restaurant->id == $category->restaurant_id) selected @endif> {{ $restaurant->name }}</option>
+                @endforeach
+            </select>
+        </div>
 
         <div class="form-group">
             <label for="exampleInputEmail1"> Category Icon </label>
