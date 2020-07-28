@@ -32,3 +32,5 @@ Route::post('make-payment' , 'Api\PaymentController@makePayment');
 Route::get('get-order-list-by-user-id/{userId}' , 'Api\OrderController@getOrdersByUserId');
 
 Route::get('restaurants' , 'Api\RestaurantController@index');
+Route::get('get-categories-by-restaurant/{restaurantId}' , 'Api\CategoryController@getCategoriesByRestaurantId');
+

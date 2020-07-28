@@ -29,6 +29,13 @@ class CategoryController extends Controller
     {
         //
     }
+	
+	
+	
+	public function getCategoriesByRestaurantId($restaurantId){
+		$categoriesByRestaurant = Category::where('restaurant_id' ,$restaurantId)->get();
+		return CategoryResource::collection($categoriesByRestaurant);
+	}
 
     /**
      * Store a newly created resource in storage.
