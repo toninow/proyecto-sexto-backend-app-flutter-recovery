@@ -52,7 +52,17 @@ class ProductController extends Controller
         $product->is_hot_product = $request->input('isHotProduct') ? true : false;
         $product->is_new_arrival = $request->input('isNewArrival') ? true : false;
         $product->category_id = $request->input('category');
+		
+		$category_id_info = $request->input('category');
+		$restaurant = Category::find($category_id_info);
+		
+		echo $restaurant->id;
+		
+		$product->restaurant_id = $restaurant->id;
+		
         $product->user_id = 0;
+		
+		/**
         if($product->save()){
 			
 			
@@ -61,25 +71,12 @@ class ProductController extends Controller
 							
 			$product->photo = $cloundary_upload['url'];
 			$product->save();
-			/**
-            $photo = $request->file('productPhoto');
-            if($photo != null){
-                $ext = $photo->getClientOriginalExtension();
-                $fileName = rand(10000, 50000) . '.' . $ext;
-                if($ext == 'jpg' || $ext == 'png'){
-                    if($photo->move(public_path(), $fileName)){
-                        $product = Product::find($product->id);
-                        //$product->photo = url('/') . '/' . $fileName;
-						$product->photo = 'https://www.indianhealthyrecipes.com/wp-content/uploads/2015/10/pizza-recipe-1.jpg';
-                        $product->save();
-                    }
-                }
-
-            }
-			**/
+		
             return redirect()->back()->with('success', 'Product information inserted successfully!');
         }
         return redirect()->back()->with('failed', 'Product information could not be inserted!');
+		
+		**/
     }
 
     /**
