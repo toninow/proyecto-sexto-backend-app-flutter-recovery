@@ -33,4 +33,5 @@ Route::get('get-order-list-by-user-id/{userId}' , 'Api\OrderController@getOrders
 
 Route::get('restaurants' , 'Api\RestaurantController@index');
 Route::get('get-categories-by-restaurant/{restaurantId}' , 'Api\CategoryController@getCategoriesByRestaurantId');
+Route::get('get-order-detail-by-order-id/{orderId}' , 'Api\OrderDetailController@getOrderDetailByOrderId');
 

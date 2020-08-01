@@ -4,11 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Order;
 use App\Models\OrderDetail;
-use App\Http\Resources\OrderResource;
+use App\Http\Resources\OrderDetailResource;
 
-class OrderController extends Controller
+class OrderDetailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,21 +17,18 @@ class OrderController extends Controller
     public function index()
     {
         //
-		return OrderResource::collection(Order::all());
     }
 	
-	public function getOrdersByUserId($userId){
+	
+	public function getOrderDetailByOrderId($orderId){
 		
-		$orders = Order::where('user_id' , $userId)->get();
-		foreach($orders as $order){
-			
-			$order->product;
-		}
+		$orderDetail = OrderDetail::where('order_id' , $orderId)->get();
 		
-		return $orders;
+		return OrderDetailResource::collection($orderDetail);
+		
 		
 	}
-
+	
     /**
      * Show the form for creating a new resource.
      *
@@ -60,12 +56,9 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($orderId)
+    public function show($id)
     {
         //
-		
-		//$orderDetails = OrderDetail::where('order_id' , $orderId)->get();
-		//return view('order.order-detail' , compact('orderDetails'));
     }
 
     /**
