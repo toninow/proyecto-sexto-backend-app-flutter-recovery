@@ -17,4 +17,9 @@ class Order extends Model
 		
 		return $this->hasOne('App\User', 'id' , 'user_id');
 	}
+	
+	public function address(){
+		
+		return $this->hasOne('App\Models\Address', 'id' , 'address_id');
+	}
 }

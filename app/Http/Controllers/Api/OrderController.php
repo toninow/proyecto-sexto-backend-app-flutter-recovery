@@ -27,6 +27,7 @@ class OrderController extends Controller
 		foreach($orders as $order){
 			
 			$order->product;
+			$order->address;
 		}
 		
 		return $orders;
