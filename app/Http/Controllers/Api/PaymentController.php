@@ -93,6 +93,7 @@ class PaymentController extends Controller
             $data = $request->input('cartItems');
             $cartItems = json_decode($data, true);
 			$orderData = $request->input('order');
+			
 			$selectedPaymentOption = json_decode($orderData,true);
 			
             $totalAmount = 0.0;
@@ -111,6 +112,7 @@ class PaymentController extends Controller
 					$order = new Order();
 					$order->order_date = Carbon::now()->toDateString();
 					$order->user_id = $request->input('userId');
+					$order->address_id = $request->input('addressId');
 					$order->payment_type = $selectedPaymentOption['paymentType'];
 					$order->total_amount = $totalAmount;
 					$order->status = 'pending';
