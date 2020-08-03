@@ -19,6 +19,8 @@
   <link href="{{ URL::to('css/sb-admin-2.min.css') }}" rel="stylesheet">
   
   <script src="{{ URL::to('ckeditor/ckeditor.js') }}"></script>
+  
+  <link href="{{ URL::to('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 
 </head>
 
