@@ -104,7 +104,8 @@ class PaymentController extends Controller
 					//$order->quantity = $cartItem['productQuantity'];
 					//$order->amount = ($cartItem['productPrice'] - $cartItem['productDiscount']);
 					//$totalAmount+= $order->amount * $order->quantity;
-					$totalAmount += ($cartItem['productPrice'] - $cartItem['productDiscount']) * $cartItem['productQuantity'];
+					//$totalAmount += ($cartItem['productPrice'] - $cartItem['productDiscount']) * $cartItem['productQuantity'];
+					$totalAmount += $cartItem['productPrice'] * $cartItem['productQuantity'];
 					
 				}
 				
@@ -127,6 +128,7 @@ class PaymentController extends Controller
 							$orderDetail->order_id = $order->id;
 							$orderDetail->order_product_name = $cartItem['productName'];
 							$orderDetail->product_order_price = $cartItem['productPrice'];
+							$orderDetail->quantity = $cartItem['productQuantity'];
 							$orderDetail->product_photo = $cartItem['productPhoto'];
 							$orderDetail->product_order_discount = $cartItem['productDiscount'];
 							$orderDetail->status = 'pending';
