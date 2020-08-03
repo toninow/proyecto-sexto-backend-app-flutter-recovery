@@ -129,11 +129,16 @@ class ProductController extends Controller
         $product->user_id = 0;
         if($product->save()){
 			
-			Cloudder::upload($request->file('productPhoto'));
-			$cloundary_upload = Cloudder::getResult();
-							
-			$product->photo = $cloundary_upload['url'];
-			$product->save();
+			
+			$photo = $request->file('productPhoto');
+            if($photo != null){
+				Cloudder::upload($request->file('productPhoto'));
+				$cloundary_upload = Cloudder::getResult();
+								
+				$product->photo = $cloundary_upload['url'];
+				$product->save();
+				
+			}
 			
 			/**
             $photo = $request->file('productPhoto');

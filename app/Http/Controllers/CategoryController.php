@@ -51,12 +51,16 @@ class CategoryController extends Controller
 		
 		if($category->save()){
 			
+					$photo = $request->file('categoryIcon');
+						if($photo != null){
 			
 							Cloudder::upload($request->file('categoryIcon'));
 							$cloundary_upload = Cloudder::getResult();
 							
 							$category->icon = $cloundary_upload['url'];
 							$category->save();
+							
+						}
 	
 			
 			
