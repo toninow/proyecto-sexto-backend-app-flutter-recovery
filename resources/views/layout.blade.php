@@ -422,6 +422,16 @@
   <script src="{{ URL::to('js/demo/chart-area-demo.js') }}"></script>
   <script src="{{ URL::to('js/demo/chart-pie-demo.js') }}"></script>
   
+  
+
+
+		  <!-- Page level plugins -->
+		  <script src="{{ URL::to('vendor/datatables/jquery.dataTables.min.js') }}"></script>
+		  <script src="{{ URL::to('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+		  <!-- Page level custom scripts -->
+		  <script src="{{ URL::to('js/demo/datatables-demo.js') }}"></script>
+  
   <script>
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
