@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('dashboard');
+//});
 
 
 
 Route::middleware(['auth'])->group(function () {
+	
+	Route::get('/', 'DashboardController@index');
+	Route::get('home', 'DashboardController@index');
 	Route::get('dashboard', 'DashboardController@index');
 	Route::post('post-category-form', 'CategoryController@store');
 	Route::get('create-category', 'CategoryController@create');
