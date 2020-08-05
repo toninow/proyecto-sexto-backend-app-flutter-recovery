@@ -14,7 +14,7 @@
             <div class="card text-white bg-primary o-hidden h-100">
                 <div class="card-body">
                     <div class="card-body-icon">
-                        <i class="fas fa-fw fa-heart"></i>
+                        <i class="fas fa-fw fa-building"></i>
                     </div>
                     <div class="mr-5">{{ $countRestaurants }} Restaurants!</div>
                 </div>
