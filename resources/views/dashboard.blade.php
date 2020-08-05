@@ -14,7 +14,7 @@
             <div class="card text-white bg-primary o-hidden h-100">
                 <div class="card-body">
                     <div class="card-body-icon">
-                        <i class="fas fa-fw fa-comments"></i>
+                        <i class="fas fa-fw fa-building"></i>
                     </div>
                     <div class="mr-5">{{ $countRestaurants }} Restaurants!</div>
                 </div>
@@ -30,9 +30,9 @@
             <div class="card text-white bg-warning o-hidden h-100">
                 <div class="card-body">
                     <div class="card-body-icon">
-                        <i class="fas fa-fw fa-list"></i>
+                        <i class="fas fa-fw fa-th-list"></i>
                     </div>
-                    <div class="mr-5">11 New Tasks!</div>
+                    <div class="mr-5">{{ $countCategories }} Categories</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
@@ -46,9 +46,9 @@
             <div class="card text-white bg-success o-hidden h-100">
                 <div class="card-body">
                     <div class="card-body-icon">
-                        <i class="fas fa-fw fa-shopping-cart"></i>
+                        <i class="fas fa-fw fa-coffee"></i>
                     </div>
-                    <div class="mr-5">123 New Orders!</div>
+                    <div class="mr-5">{{ $countProducts }} Foods</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
@@ -62,9 +62,9 @@
             <div class="card text-white bg-danger o-hidden h-100">
                 <div class="card-body">
                     <div class="card-body-icon">
-                        <i class="fas fa-fw fa-life-ring"></i>
+                        <i class="fas fa-fw fa-shopping-cart"></i>
                     </div>
-                    <div class="mr-5">13 New Tickets!</div>
+                    <div class="mr-5">{{ $countOrders }} Orders!</div>
                 </div>
                 <a class="card-footer text-white clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
