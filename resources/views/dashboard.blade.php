@@ -19,7 +19,7 @@
                     <div class="mr-5">{{ $countRestaurants }} Restaurants!</div>
                 </div>
                 <a class="card-footer text-black clearfix small z-1" href="#">
-                    <span class="float-left">View Details</span>
+                    <span class="float-left">Manage Restaurants</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
@@ -35,7 +35,7 @@
                     <div class="mr-5">{{ $countCategories }} Categories</div>
                 </div>
                 <a class="card-footer text-black clearfix small z-1" href="#">
-                    <span class="float-left">View Details</span>
+                    <span class="float-left">Manage Categories</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
@@ -51,7 +51,7 @@
                     <div class="mr-5">{{ $countProducts }} Foods</div>
                 </div>
                 <a class="card-footer text-black clearfix small z-1" href="#">
-                    <span class="float-left">View Details</span>
+                    <span class="float-left">Manager Products</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
@@ -67,7 +67,7 @@
                     <div class="mr-5">{{ $countOrders }} Orders!</div>
                 </div>
                 <a class="card-footer text-black clearfix small z-1" href="#">
-                    <span class="float-left">View Details</span>
+                    <span class="float-left">Manage Orders</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
                 </span>
