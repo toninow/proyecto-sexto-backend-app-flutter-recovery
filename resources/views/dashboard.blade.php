@@ -114,7 +114,7 @@
                     @foreach($latestOrders as $order)
 
                         <tr>
-                            <td> {{ $order->order_id }} </td>
+                            <td> {{ $order->id }} </td>
 							<td> {{ $order->order_date }} </td>
 							<td> {{ $order->payment_type }} </td>
 							<td> {{ $order->total_amount }} </td>
