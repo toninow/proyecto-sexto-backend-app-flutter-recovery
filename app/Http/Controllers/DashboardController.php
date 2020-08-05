@@ -25,6 +25,8 @@ class DashboardController extends Controller
 		$orders = Order::all();
 		$countOrders = count($orders);
 		
-		return view('dashboard' , compact('countRestaurants','countCategories','countProducts','countOrders'));
+		$latestOrders = Order::orderBy('created_at','desc')->take(10)->get();
+		
+		return view('dashboard' , compact('countRestaurants','countCategories','countProducts','countOrders', 'latestOrders'));
 	}
 }

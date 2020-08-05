@@ -18,7 +18,7 @@
                     </div>
                     <div class="mr-5">{{ $countRestaurants }} Restaurants!</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
+                <a class="card-footer text-black clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="mr-5">{{ $countCategories }} Categories</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
+                <a class="card-footer text-black clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="mr-5">{{ $countProducts }} Foods</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
+                <a class="card-footer text-black clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="mr-5">{{ $countOrders }} Orders!</div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="#">
+                <a class="card-footer text-black clearfix small z-1" href="#">
                     <span class="float-left">View Details</span>
                     <span class="float-right">
                   <i class="fas fa-angle-right"></i>
@@ -76,16 +76,7 @@
         </div>
     </div>
 
-    <!-- Area Chart Example-->
-    <div class="card mb-3">
-        <div class="card-header">
-            <i class="fas fa-chart-area"></i>
-            Area Chart Example</div>
-        <div class="card-body">
-            <canvas id="myAreaChart" width="100%" height="30"></canvas>
-        </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-    </div>
+
 
     <!-- DataTables Example -->
     <div class="card mb-3">
