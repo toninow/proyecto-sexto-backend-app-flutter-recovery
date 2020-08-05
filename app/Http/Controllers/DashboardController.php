@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Restaurant;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -10,6 +10,9 @@ class DashboardController extends Controller
 	
 	public function index(){
 		
-		return view('dashboard');
+		$restaurants = Restaurant::all();
+		$countRestaurants = count($restaurants);
+		
+		return view('dashboard' , compact('countRestaurants'));
 	}
 }
