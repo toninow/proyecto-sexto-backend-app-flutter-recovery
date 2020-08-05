@@ -30,7 +30,7 @@
   <div id="wrapper">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ URL::to('dashboard') }}">
@@ -81,7 +81,7 @@
         </a>
         <div id="collapseCategory" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
+            <h6 class="collapse-header">Manage Categories:</h6>
                      <a class="collapse-item" href="{{ URL::to('create-category') }}"> Create Category</a>
                 <a class="collapse-item" href="{{ URL::to('all-categories') }}"> All Categories </a>
           </div>
@@ -96,7 +96,7 @@
         </a>
         <div id="collapseProduct" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
+            <h6 class="collapse-header">Manage Products:</h6>
                      <a class="collapse-item" href="{{ URL::to('get-product-form') }}"> Create Product</a>
                 <a class="collapse-item" href="{{ URL::to('all-products') }}"> All Products </a>
           </div>
@@ -126,7 +126,7 @@
         </a>
         <div id="collapseOrders" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
+            <h6 class="collapse-header">Manage Orders:</h6>
                      <a class="collapse-item" href="{{ URL::to('all-orders') }}"> All Orders </a>
                
           </div>
