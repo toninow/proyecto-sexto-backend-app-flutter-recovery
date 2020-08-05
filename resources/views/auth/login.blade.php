@@ -101,6 +101,13 @@
                             </div>
                         </div>
                     </form>
+					
+					<hr>
+					
+					<div class="text-center">
+							<a class="small" href="{{ URL::to('register') }}">Create an Account!</a>
+						  
+					</div>
  
 				</div>
               </div>
