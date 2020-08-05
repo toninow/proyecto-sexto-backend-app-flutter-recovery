@@ -3,7 +3,8 @@
     <!-- Breadcrumbs-->
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
+            
+			<a class="collapse-item" href="{{ URL::to('dashboard') }}"> Dashboard</a>
         </li>
         <li class="breadcrumb-item active">Overview</li>
     </ol>
