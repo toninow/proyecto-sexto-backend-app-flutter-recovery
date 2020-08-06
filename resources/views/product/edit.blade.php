@@ -40,7 +40,11 @@
 		 <div class="form-group">
             <label for="exampleInputEmail1"> Product Details </label>
             <textarea name="productDetail" id="editor1"> {!! $product->detail !!}</textarea>
+			
+			
         </div>
+		
+	
 
         <div class="form-group">
             <label for="exampleInputEmail1"> Select product category </label>

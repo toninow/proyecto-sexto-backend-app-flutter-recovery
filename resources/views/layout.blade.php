@@ -11,10 +11,7 @@
 
   <title>MULTI RESTAURANT - SUPER ADMIN DASHBOARD</title>
 
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="css/sb-admin-2.min.css" rel="stylesheet">
-  <script src="ckeditor/ckeditor.js"></script>
-  <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.0.7/js/sb-admin-2.js" integrity="sha512-/FizpBWbsgQv01cm2rtk4pvoCKkwbmjWR/yr06+M5vsT0KS1epqArQMDl4AaW/5EwN4szbJGP70pwNzXY9J3Dg==" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.0.7/css/sb-admin-2.min.css" integrity="sha512-FXgL8f6gtCYx8PjODtilf5GCHlgTDdIVZKRcUT/smwfum7hr4M1ytewqTtNd9LK4/CzbW4czU6Tr3f3Xey6lRg==" crossorigin="anonymous" />
@@ -306,19 +303,7 @@
   </div>
 
   
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="js/sb-admin-2.min.js"></script>
-  <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="js/demo/chart-area-demo.js"></script>
-  <script src="js/demo/chart-pie-demo.js"></script>
-   <!-- Page level plugins -->
-   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
-   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
-		  <!-- Page level custom scripts -->
-	<script src="js/demo/datatables-demo.js"></script>
   
   
   
@@ -350,10 +335,11 @@
 		  <script src="{{ URL::to('js/demo/datatables-demo.js') }}"></script>
   
   <script>
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
+  
     CKEDITOR.replace( 'editor1' );
 </script>
+
+
   
 
 </body>
