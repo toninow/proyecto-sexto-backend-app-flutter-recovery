@@ -16,6 +16,11 @@
   <script src="ckeditor/ckeditor.js"></script>
   <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.0.7/js/sb-admin-2.js" integrity="sha512-/FizpBWbsgQv01cm2rtk4pvoCKkwbmjWR/yr06+M5vsT0KS1epqArQMDl4AaW/5EwN4szbJGP70pwNzXY9J3Dg==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.0.7/css/sb-admin-2.min.css" integrity="sha512-FXgL8f6gtCYx8PjODtilf5GCHlgTDdIVZKRcUT/smwfum7hr4M1ytewqTtNd9LK4/CzbW4czU6Tr3f3Xey6lRg==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.0.7/css/sb-admin-2.css" integrity="sha512-2mvf8PxDFQVlVF7Qgh5nfdN4MaTvHhcg51Yronqk/ZyKr7JWRHhjKpdoc0hZigk33yODmYW3c+IZsDFssdpE1w==" crossorigin="anonymous" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.0.7/js/sb-admin-2.min.js" integrity="sha512-tEHlevWV9EmBCnrR098uzR3j8T3x4wtGnNY6SdsZN39uxICadRZaxrRH90iHPqjsqZK5z76gw0uuAvlCoasOUQ==" crossorigin="anonymous"></script>
+  
   <!-- Custom fonts for this template-->
   <link href="{{ URL::to('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
